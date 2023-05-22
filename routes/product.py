@@ -4,7 +4,7 @@ from schemas.product import productEntity, productsEntity
 from models.product import Product
 from bson import ObjectId
 from starlette.status import HTTP_204_NO_CONTENT
-from models.product import Product, OrderItem, Order, PaymentSession
+#from models.product import Product, OrderItem, Order, PaymentSession
 
 product = APIRouter()
 
@@ -44,9 +44,3 @@ def update_product(id: str, product: Product):
     conn.local.product.find_one_and_update({"_id": ObjectId(id)}, {"$set": dict(product)})
     return productEntity(conn.local.product.find_one({"_id": ObjectId(id)}))
 
-@router.post("/orders", response_model=Order)
-def create_order(order: Order):
-    conn.local.order.
-    return payment_session
-
-router = APIRouter()
