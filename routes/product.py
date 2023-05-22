@@ -44,15 +44,9 @@ def update_product(id: str, product: Product):
     conn.local.product.find_one_and_update({"_id": ObjectId(id)}, {"$set": dict(product)})
     return productEntity(conn.local.product.find_one({"_id": ObjectId(id)}))
 
-router = APIRouter()
-
-@router.post("/orders")
+@router.post("/orders", response_model=Order)
 def create_order(order: Order):
-    order_id = generate_order_id()
-
-    session_id = create_payment_session(order_id, order.total_amount)
-
-    payment_session = PaymentSession(order_id=order_id, session_id=session_id)
-    save_payment_session(payment_session)
-
+    conn.local.order.
     return payment_session
+
+router = APIRouter()

@@ -3,6 +3,7 @@ from pydantic import BaseModel
 
 class Product(BaseModel):
     id: Optional[str] 
+    sku: int
     name: str
     description: str
     category: str
@@ -10,15 +11,11 @@ class Product(BaseModel):
     stock: int
     
 class OrderItem(BaseModel):
-    product_id: str
+    product_id: int
     quantity: int
-    price: float
 
 class Order(BaseModel):
-    customer_id: str
-    items: list[OrderItem]
+    products: list[OrderItem]
+    buyOrder: int
+    sessionId: int
     total_amount: float
-
-class PaymentSession(BaseModel):
-    order_id: str
-    session_id: str
