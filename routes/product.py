@@ -1,12 +1,13 @@
 from fastapi import APIRouter, Response, status, HTTPException
 from config.db import conn
 from schemas.product import productEntity, productsEntity
-from models.product import Product
+from schemas.order import OrderItem, Order
 from bson import ObjectId
 from starlette.status import HTTP_204_NO_CONTENT
-#from models.product import Product, OrderItem, Order, PaymentSession
+from schemas.product import Product
 
 product = APIRouter()
+
 
 # Encontrar todos los productos
 @product.get('/products', response_model=list[Product], tags=["Products"])
