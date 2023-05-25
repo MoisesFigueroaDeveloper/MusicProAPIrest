@@ -5,15 +5,23 @@ Esta es una API REST para gestionar productos de una tienda de música, donde lo
 Requisitos previos
 Asegúrate de tener instalados los siguientes componentes antes de ejecutar la API:
 
-Python 3.x(3.11.2 recomendable)
-MongoDB
-uvicorn
+instalar Python 3.x(3.11.2 recomendable)
+Instalar anaconda3 ultima version
+
+lista
+-MongoDB(opcional mongo compass para poder revisar desde forma local el servidor)
+-uvicorn
+-fastapi
+-black
+-transbank-sdk(python, opcional ya que no se hizo la integracion de webpay)
+-pymongo
+-flask
 
 Instalación
 1.Clona este repositorio en tu máquina local:
 bash
 Copy code
-git clone https://github.com/tu-usuario/MusicProAPIrest.git
+git clone https://github.com/MoisesFigueroaDeveloper/MusicProAPIrest.git
 
 2.Ve al directorio del proyecto:
 bash
